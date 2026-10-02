@@ -1,58 +1,22 @@
 # ECAL TB H4 — June 2026
 
 - **Run list**
-  - [Google Sheet](https://docs.google.com/spreadsheets/d/1hvROf58AUvwlSgFveNDmVWZLXPj80i-xjC784sdWq4A/edit?usp=sharing)
-  - List of good electron runs is also available in this repository.
-
-- **Run timestamps**
-  - Source file: `timestamps_runs.txt`
-  - Generated with:
-    ```bash
-    cd /eos/cms/store/group/dpg_ecal/comm_ecal/upgrade/testbeam/ECALTB_H4_Jun2026/EB
-    rm /eos/user/r/rgargiul/www/timestamps_runs.txt
-    for f in $(ls -1d 2*); do
-        echo "$f $(ls -lart $f | head -n 2 | tail -n 1 | awk '{print $6" "$7" "$8}')"
-    done
-    ```
+  - https://gitlab.cern.ch/ecal-daq-upgrade/DANTE/-/blob/dev-2026/logbook_db_2025.txt?ref_type=heads
 
 - **Beam information**
   - Beam element logs:
     - Available in the `beamfiles/` folder.
-  - Collimator information for each run (timestamps from Nikos + info from elogs):
-    - `beamfiles/good_ele_runs_collimators_match_overwritten_with_elog_info.csv`
-    - Elogs: ``` https://cmsonline.cern.ch/cms-elog/1345489```,  ```https://cmsonline.cern.ch/cms-elog/1345603```, ```https://cmsonline.cern.ch/cms-elog/1345545```
   - Beamline energy spread details:
     - [CERN document](https://cds.cern.ch/record/702402/files/cer-000414329.pdf)
   - Syncrotron radiation beam energy spread RMS (in %): 1.92e-7* E**(5/2), Fig.4 of the paper in the link above
-  
+
 - **Reconstructed data**
   - Reconstructed files, using a 3×3 matrix:
-    - `/eos/cms/store/group/dpg_ecal/comm_ecal/upgrade/testbeam/ECALTB_H4_Jun2026/Reco`
+    - `/eos/cms/store/group/dpg_ecal/comm_ecal/upgrade/testbeam/ECALTB_H4_Oct2025/Reco_v3_fix`
   - Reconstruction software:
-    - [DANTE v2026-260819](https://gitlab.cern.ch/ecal-daq-upgrade/DANTE/-/tags/v2026-260819)
+    - [DANTE v2026-260819](https://gitlab.cern.ch/ecal-daq-upgrade/DANTE/-/tags/v2026-260819) [to be updated]
   - Template used:
-    - Seed crystal: **ch185**
-    - Energy: **100 GeV**
-    - Run: **20521**
-    - [Template library](https://lfrosina.web.cern.ch/TestBeam/AllTemplates/template_library_default.root)
+    - From Marc, available on ecalgit lxplus
 
-- **Reconstruction jobs**
-  - Runner used for all reconstruction jobs:
-    - `process_good_runs_2026_parallel.sh`
-
-- **Merged runs**
-  - Details on which runs have been used:
-    - `merged_runs_2026.md`
-  - Machine-readable version:
-    - `merged_runs*.csv`
-  - Collimator information for merged runs at **run level**:
-    - `beamfiles/colls_runs_*ohm.csv`
-  - Collimator information for merged runs at **energy level**:
-    - `colls_energies_summary_*`
-    - Almost all runs at the same energy have the same collimator settings
-    - The **BES is evaluated directly** in these files (with ```=SQRT( ((D2-C2)/2)^2 + ((F2-E2)/2)^2)/(27*SQRT(3))```)
-
-- **Energy-resolution fits**
-  - Fits performed using:
-    - [energy-resolution-fitter — `fit.sh`](https://github.com/campaneros/energy-resolution-fitter/blob/main/fit.sh)
-    - Results here: [energy-resolution-fitter — `rereco_*.csv`](https://github.com/campaneros/energy-resolution-fitter/blob/main/rereco_340.csv)
+- **Runs for energy and MCP**
+  - Follow: ```declare -A runs_by_en=( [20]="19582 19583" [30]="19579 19580 19581" [40]="19578" [60]="19576 19577" [80]="19574 19575" [100]="19572 19573 19614" [120]="19571" [175]="19565 19566" [200]="19564 19567 19568 19569" [225]="19632 19633" [250]="19626 19587")```
