@@ -1,4 +1,4 @@
-# ECAL TB H4 — June 2026
+# ECAL TB H4 — October 2025
 
 - **Run list**
   - https://gitlab.cern.ch/ecal-daq-upgrade/DANTE/-/blob/dev-2026/logbook_db_2025.txt?ref_type=heads
