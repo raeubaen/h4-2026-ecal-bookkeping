@@ -54,5 +54,5 @@
 
 - **Energy-resolution fits**
   - Fits performed using:
-    - [energy-resolution-fitter — `fit.sh`](https://github.com/campaneros/energy-resolution-fitter/blob/main/fit.sh)
-    - Results here: [energy-resolution-fitter — `rereco_*.csv`](https://github.com/campaneros/energy-resolution-fitter/blob/main/rereco_340.csv)
+    - https://github.com/raeubaen/ecal-reso-analysis/tree/main
+    - Results here: https://rgargiul.web.cern.ch/ecal-reso-analysis-output/, presented at Ecal Days
